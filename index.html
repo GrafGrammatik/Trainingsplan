@@ -368,7 +368,7 @@ h1{margin:0;font-family:var(--display);font-weight:900;font-size:56px;line-heigh
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 (()=>{
-const DEFAULT_PLAN = [{"d": "Montag", "n": "Bankdrücken an der Multipresse – schwer", "s": 4, "r": "5–8", "p": 120, "i": "RIR 2–3", "h": "Hauptübung; Sicherheitsstopper setzen."}, {"d": "Montag", "n": "Brustpresse sitzend (Maschine)", "s": 2, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Kontrolliert, schmerzfreier Bewegungsumfang."}, {"d": "Montag", "n": "Latzug zur Brust", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Kein Schwung."}, {"d": "Montag", "n": "Bizepscurl-Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Oberarme ruhig halten."}, {"d": "Montag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Ellbogen nah am Körper."}, {"d": "Montag", "n": "Beinstrecker-Maschine", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2–3", "h": "Moderates Beinvolumen, Knie schmerzfrei bewegen."}, {"d": "Montag", "n": "Handgelenkcurls", "s": 2, "r": "12–20", "p": 60, "i": "RIR 2–3", "h": "Unterarme abgestützt, Handflächen nach oben"}, {"d": "Mittwoch", "n": "Bankdrücken an der Multipresse – leicht/Technik", "s": 3, "r": "8–10", "p": 120, "i": "RIR 3–4", "h": "Etwa 10–15 % leichter als Montag; saubere Wiederholungen."}, {"d": "Mittwoch", "n": "Brustgestütztes Rudern (Maschine)", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Ohne Schwung."}, {"d": "Mittwoch", "n": "Schulterpresse-Maschine", "s": 2, "r": "8–12", "p": 90, "i": "RIR 2–3", "h": "Nur schmerzfreier Bewegungsumfang."}, {"d": "Mittwoch", "n": "Bizepscurl-Maschine oder Kabelcurl", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Langsam ablassen."}, {"d": "Mittwoch", "n": "Trizepsstrecken am Kabel über Kopf", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Nur wenn Schulter/Ellbogen schmerzfrei."}, {"d": "Mittwoch", "n": "Wadenheben sitzend oder an der Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Unten kontrolliert dehnen, oben kurz halten."}, {"d": "Freitag", "n": "Bankdrücken an der Multipresse – mittel", "s": 4, "r": "6–10", "p": 120, "i": "RIR 2–3", "h": "Mittlere Last; keine erzwungenen Wiederholungen."}, {"d": "Freitag", "n": "Rudermaschine mit Bruststütze", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Rücken neutral halten."}, {"d": "Freitag", "n": "Butterfly / Pec Deck", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Kontrollierte Bewegung."}, {"d": "Freitag", "n": "Bizepscurl-Maschine", "s": 3, "r": "8–12", "p": 60, "i": "RIR 1–2", "h": "Wenn alle Sätze 12 schaffen: kleine Gewichtsstufe hoch."}, {"d": "Freitag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "8–12", "p": 60, "i": "RIR 1–2", "h": "Ellbogen ruhig halten."}, {"d": "Freitag", "n": "Beinbeuger-Maschine", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2–3", "h": "Langsam und kontrolliert."}, {"d": "Sonntag", "n": "Hack Squat oder Pendulum Squat Maschine", "s": 3, "r": "8–12", "p": 120, "i": "RIR 3", "h": "Mit leichtem Gewicht starten; Sitz/Schulterpolster einstellen, schmerzfreier Bewegungsumfang. Wenn unangenehm: Beinpresse."}, {"d": "Sonntag", "n": "Bizepscurl-Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Arme priorisieren; saubere Wiederholungen."}, {"d": "Sonntag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Kein Schwung."}, {"d": "Sonntag", "n": "Bizepscurl (Hammer) am Kabelzug", "s": 2, "r": "12–15", "p": 60, "i": "RIR 1–2", "h": "Gleichmäßige Spannung."}, {"d": "Sonntag", "n": "Trizepsstrecken am Kabel oder Trizepsmaschine", "s": 2, "r": "12–15", "p": 60, "i": "RIR 1–2", "h": "Schmerzfreie Variante wählen."}, {"d": "Sonntag", "n": "Wadenheben sitzend oder stehend an der Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Volle, kontrollierte Bewegung."}, {"d": "Sonntag", "n": "Reverse Wrist Curls", "s": 2, "r": "12–20", "p": 60, "i": "RIR 1–2", "h": "Unterarme abgestützt, Handflächen nach unten."}];
+const DEFAULT_PLAN = [{"d": "Montag", "n": "Bankdrücken – schwer", "s": 4, "r": "5–8", "p": 120, "i": "RIR 2–3", "h": "Hauptübung; Sicherheitsstopper setzen."}, {"d": "Montag", "n": "Brustpresse sitzend (Maschine)", "s": 2, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Kontrolliert, schmerzfreier Bewegungsumfang."}, {"d": "Montag", "n": "Latzug zur Brust", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Kein Schwung."}, {"d": "Montag", "n": "Bizepscurl-Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Oberarme ruhig halten."}, {"d": "Montag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Ellbogen nah am Körper."}, {"d": "Montag", "n": "Beinstrecker-Maschine", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2–3", "h": "Moderates Beinvolumen, Knie schmerzfrei bewegen."}, {"d": "Montag", "n": "Handgelenkcurls", "s": 2, "r": "12–20", "p": 60, "i": "RIR 2–3", "h": "Unterarme abgestützt, Handflächen nach oben"}, {"d": "Mittwoch", "n": "Bankdrücken – leicht/Technik", "s": 3, "r": "8–10", "p": 120, "i": "RIR 3–4", "h": "Etwa 10–15 % leichter als Montag; saubere Wiederholungen."}, {"d": "Mittwoch", "n": "Brustgestütztes Rudern (Maschine)", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Ohne Schwung."}, {"d": "Mittwoch", "n": "Schulterpresse-Maschine", "s": 2, "r": "8–12", "p": 90, "i": "RIR 2–3", "h": "Nur schmerzfreier Bewegungsumfang."}, {"d": "Mittwoch", "n": "Bizepscurl (Hammer) am Kabelzug", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Langsam ablassen."}, {"d": "Mittwoch", "n": "Trizepsstrecken am Kabel", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Nur wenn Schulter/Ellbogen schmerzfrei."}, {"d": "Mittwoch", "n": "Calf Raises", "s": 3, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Unten kontrolliert dehnen, oben kurz halten."}, {"d": "Freitag", "n": "Bankdrücken – mittel", "s": 4, "r": "6–10", "p": 120, "i": "RIR 2–3", "h": "Mittlere Last; keine erzwungenen Wiederholungen."}, {"d": "Freitag", "n": "Brustgestütztes Rudern (Maschine)", "s": 3, "r": "8–12", "p": 90, "i": "RIR 2", "h": "Rücken neutral halten."}, {"d": "Freitag", "n": "Butterfly / Pec Deck", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Kontrollierte Bewegung."}, {"d": "Freitag", "n": "Bizepscurl-Maschine", "s": 3, "r": "8–12", "p": 60, "i": "RIR 1–2", "h": "Wenn alle Sätze 12 schaffen: kleine Gewichtsstufe hoch."}, {"d": "Freitag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "8–12", "p": 60, "i": "RIR 1–2", "h": "Ellbogen ruhig halten."}, {"d": "Freitag", "n": "Beinbeuger-Maschine", "s": 2, "r": "10–15", "p": 60, "i": "RIR 2–3", "h": "Langsam und kontrolliert."}, {"d": "Sonntag", "n": "Pendulum Squat Maschine", "s": 3, "r": "8–12", "p": 120, "i": "RIR 3", "h": "Mit leichtem Gewicht starten; Sitz/Schulterpolster einstellen, schmerzfreier Bewegungsumfang. Wenn unangenehm: Beinpresse."}, {"d": "Sonntag", "n": "Bizepscurl-Maschine", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Arme priorisieren; saubere Wiederholungen."}, {"d": "Sonntag", "n": "Trizepsdrücken am Kabelzug", "s": 3, "r": "10–15", "p": 60, "i": "RIR 1–2", "h": "Kein Schwung."}, {"d": "Sonntag", "n": "Bizepscurl (Hammer) am Kabelzug", "s": 2, "r": "12–15", "p": 60, "i": "RIR 1–2", "h": "Gleichmäßige Spannung."}, {"d": "Sonntag", "n": "Trizepsstrecken am Kabel", "s": 2, "r": "12–15", "p": 60, "i": "RIR 1–2", "h": "Schmerzfreie Variante wählen."}, {"d": "Sonntag", "n": "Calf Raises", "s": 3, "r": "10–15", "p": 60, "i": "RIR 2", "h": "Volle, kontrollierte Bewegung."}, {"d": "Sonntag", "n": "Reverse Wrist Curls", "s": 2, "r": "12–20", "p": 60, "i": "RIR 1–2", "h": "Unterarme abgestützt, Handflächen nach unten."}];
 const WEEK = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'];
 const JS_DAY = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
 const CHECK = '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -395,7 +395,22 @@ const upper = r => { const m = String(r).match(/(\d+)\s*$/); return m ? parseInt
 const lower = r => { const m = String(r).match(/^\s*(\d+)/); return m ? parseInt(m[1],10) : 0; };
 
 /* ---------- state ---------- */
-let plan = (() => { const p = parse(ls.get('tp.plan')); return p && p.rows && p.rows.length ? p : { rows: DEFAULT_PLAN, updated: 0 }; })();
+const PLAN_BUILT = 1793185140044;
+const RENAMES = {"Bankdrücken an der Multipresse – schwer": "Bankdrücken – schwer", "Bankdrücken an der Multipresse – leicht/Technik": "Bankdrücken – leicht/Technik", "Bizepscurl-Maschine oder Kabelcurl": "Bizepscurl (Hammer) am Kabelzug", "Trizepsstrecken am Kabel über Kopf": "Trizepsstrecken am Kabel", "Wadenheben sitzend oder an der Maschine": "Calf Raises", "Bankdrücken an der Multipresse – mittel": "Bankdrücken – mittel", "Rudermaschine mit Bruststütze": "Brustgestütztes Rudern (Maschine)", "Hack Squat oder Pendulum Squat Maschine": "Pendulum Squat Maschine", "Trizepsstrecken am Kabel oder Trizepsmaschine": "Trizepsstrecken am Kabel", "Wadenheben sitzend oder stehend an der Maschine": "Calf Raises"};
+/* A plan built into the page wins over any older stored/imported plan; a newer import wins over the built-in one. */
+const resolvePlan = p => (p && p.rows && p.rows.length && (p.updated||0) >= PLAN_BUILT) ? p : { rows:DEFAULT_PLAN, updated:PLAN_BUILT, embedded:true };
+let plan = resolvePlan(parse(ls.get('tp.plan')));
+function migrateNames(){
+  ls.keys().forEach(k => {
+    if (!k.startsWith('tp.s.')) return; const s = parse(ls.get(k)); if (!s || !s.sets) return; let ch = false;
+    for (const o in RENAMES){
+      if (!(o in s.sets)) continue; const n = RENAMES[o];
+      if (!(n in s.sets) || !(s.sets[n]||[]).some(x => x && x.d)) s.sets[n] = s.sets[o];
+      delete s.sets[o]; ch = true;
+    }
+    if (ch){ s.updated = Date.now(); ls.set(k, JSON.stringify(s)); }
+  });
+}
 let prefs = Object.assign({ sound:true, vibrate:true, mode:'list', step:2.5 }, parse(ls.get('tp.prefs')) || {});
 const today = isoDate(new Date());
 let day = null, sess = null, ui = [], hist = {}, bests = {}, nextTarget = null, interacted = false, T = null;
@@ -968,7 +983,7 @@ $('#copyXls').onclick = () => copyText(excelText());
 /* ---------- settings / import ---------- */
 const sheet = $('#sheetScrim');
 function openSheet(){
-  $('#planInfo').textContent = plan.rows.length+' Übungen an '+dayList().length+' Tagen'+(plan.updated ? ' (importiert am '+new Date(plan.updated).toLocaleDateString('de-DE')+')' : ' (aus deiner Datei Trainingsplaner.xlsx)')+'.';
+  $('#planInfo').textContent = plan.rows.length+' Übungen an '+dayList().length+' Tagen'+(plan.embedded ? ' (fest eingebaut, Stand '+new Date(plan.updated).toLocaleDateString('de-DE')+')' : ' (importiert am '+new Date(plan.updated).toLocaleDateString('de-DE')+')')+'.';
   $('#optSound').checked = prefs.sound; $('#optVib').checked = prefs.vibrate;
   $('#importStatus').textContent = '';
   $('#syncInfo').textContent = DB ? 'Deine Einträge werden mit deinem Konto gesichert und sind auf allen Geräten verfügbar.' : 'Deine Einträge bleiben auf diesem Gerät gespeichert.';
@@ -1041,7 +1056,7 @@ $('#bkGo').onclick = () => {
   const st = $('#bkStatus'); const o = parse($('#bkBox').value.trim());
   if (!o || o.app !== 'trainingsplaner' || !o.data){ st.textContent = 'Das ist kein gültiges Backup.'; return; }
   let n = 0; for (const k in o.data){ if (k.startsWith('tp.') && typeof o.data[k] === 'string'){ ls.set(k, o.data[k]); n++; } }
-  plan = (() => { const p = parse(ls.get('tp.plan')); return p && p.rows && p.rows.length ? p : plan; })();
+  plan = resolvePlan(parse(ls.get('tp.plan'))); migrateNames();
   prefs = Object.assign(prefs, parse(ls.get('tp.prefs')) || {});
   $('#bkBox').hidden = true; $('#bkGo').hidden = true; day = pickDay().day; stopTimer(); renderDay();
   st.textContent = 'Backup eingespielt ('+n+' Einträge).';
@@ -1074,6 +1089,7 @@ async function initRemote(){
         if (!cur || (o.updated||0) > (cur.updated||0)) ls.set(k, v.json);
       }
     });
+    migrateNames();
     ls.keys().forEach(k => {
       if (!k.startsWith('tp.s.')) return; const s = parse(ls.get(k)); if (!s) return;
       const rid = 's_'+s.date+'_'+s.day;
@@ -1088,6 +1104,7 @@ async function initRemote(){
 }
 
 /* ---------- start ---------- */
+migrateNames();
 day = pickDay().day;
 renderDay(); restoreTimer();
 initRemote();
